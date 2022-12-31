@@ -1,36 +1,43 @@
-import Button from "../../button/Button";
+import Img from "../../../atom/Img/Img";
+import search from "../../../assets/search.svg";
+import logo from "../../../assets/logo.svg";
+import iconShoppingCart from "../../../assets/iconShoppingCart.svg";
+import iconUser from "../../../assets/iconUser.svg";
+
+import {
+  Center,
+  Container,
+  ImgText,
+  Left,
+  Right,
+  RightList,
+  Wrapper,
+} from "./Navbar.style";
+import Input from "../../../atom/input/Input";
 
 function Navbar() {
   return (
-    <div>
-      <Button size="l" color="blue">
-        l
-      </Button>
-      <Button size="m" color="blue">
-        m
-      </Button>
-      <Button size="m" color="gray">
-        m
-      </Button>
-      <Button size="ms" color="blue">
-        ms
-      </Button>
-      <Button size="ms" color="whiteBtn">
-        ms
-      </Button>
-      <Button size="s" color="whiteBtn">
-        ms
-      </Button>
-      <Button size="tabActiv" color="tabActiv">
-        tabActiv
-      </Button>
-      <Button size="tabActiv" color="tabActiv" disabled={true}>
-        tabActiv disabled
-      </Button>
-      <Button size="tabActiv" color="tabMenu">
-        tabActiv disabled
-      </Button>
-    </div>
+    <Container>
+      <Wrapper>
+        <Left>
+          <Input isInput={false} placeholder={"상품을 검색해보세요!"} />
+          <Img imgSrc={search} width="28px" height="28px" />
+        </Left>
+        <Center>
+          <Img imgSrc={logo} />
+        </Center>
+        <Right>
+          <RightList>
+            <Img imgSrc={iconShoppingCart} width="32px" height="32px" />
+            <ImgText>장바구니</ImgText>
+          </RightList>
+          <RightList>
+            <Img imgSrc={iconUser} width="32px" height="32px" />
+            <ImgText>마이페이지</ImgText>
+          </RightList>
+        </Right>
+      </Wrapper>
+    </Container>
   );
 }
 
