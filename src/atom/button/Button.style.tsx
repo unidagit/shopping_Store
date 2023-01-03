@@ -2,12 +2,13 @@ import styled, { css } from "styled-components";
 import { ButtonProps } from "./Button";
 
 export const ButtonStyled = styled.button<ButtonProps>`
+  width: 100%;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
   border-radius: 5px;
 
   ${(props) => props.size && SIZES[props.size]}
-  ${(props) => props.color && COLOR[props.color]}
   ${(props) => props.color && COLOR[props.color]}
 `;
 
@@ -15,37 +16,31 @@ const SIZES = {
   l: css`
     font-size: 1.5rem;
     font-weight: 700;
-    width: 220px;
     height: 68px;
   `,
   m: css`
     font-size: 1.125rem;
     font-weight: 700;
-    width: 480px;
     height: 60px;
   `,
   ms: css`
     font-size: 1rem;
     font-weight: 500;
-    width: 168px;
     height: 54px;
   `,
   s: css`
     font-size: 1rem;
     font-weight: 500;
-    width: 80px;
     height: 40px;
   `,
   tabActiv: css`
     font-size: 1.125rem;
     font-weight: 700;
-    width: 320px;
     height: 60px;
   `,
   tabMenu: css`
     font-size: 1rem;
     font-weight: 00;
-    width: 250px;
     height: 50px;
   `,
 };
